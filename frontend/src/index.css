@@ -1,0 +1,23 @@
+/* Update the existing CSS with the swiper container fix */
+
+@import "tailwindcss";
+
+/* 1. Fix for Individual Slides */
+.custom-swiper-slide {
+    /* Ensures content scales out of the slide box */
+    overflow: visible !important; 
+    /* Necessary so the hovered card appears on top of adjacent slides */
+    z-index: 1; 
+}
+
+/* 2. Fix for Swiper Wrapper (the track holding all slides) */
+.swiper-wrapper {
+    /* Ensures the track doesn't clip the content */
+    overflow: visible !important;
+}
+
+/* 3. ⭐ CRITICAL FIX: Target the main Swiper container */
+.swiper {
+    /* This is often the element that has overflow: hidden applied by the library */
+    overflow: visible !important;
+}
