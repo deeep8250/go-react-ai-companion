@@ -15,6 +15,7 @@ const Mood = ({setMood}) => {
         <div className="w-120 backdrop-blur-lg bg-white/10 rounded-2xl flex  justify-center items-center p-5 gap-6">
           {array.map((item, index) => (
             <button
+            type="button"
               key={index}
               className="text-3xl hover:scale-130 transition duration-300"
               onClick={()=>setMood(item)}
