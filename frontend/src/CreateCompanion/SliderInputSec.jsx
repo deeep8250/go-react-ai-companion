@@ -4,8 +4,11 @@ import Mood from "./Mood";
 
 const SliderInputSec = ({ sendData, setMood ,setBackstory,setSliders,oncreate,sliders }) => {
   const handleSubmit = (e) => {
-    e.preventDefault(); // ⛔ Stops the page reload
+    
+    
+    e.preventDefault();
     if (oncreate) oncreate()
+       window.location.href = "/";
     console.log("Form submitted");
   };
   return (
@@ -19,6 +22,7 @@ const SliderInputSec = ({ sendData, setMood ,setBackstory,setSliders,oncreate,sl
           <div className="flex flex-col">
             <h1>Name</h1>
             <input
+            required
               type="text"
               onChange={(e) => sendData(e.target.value)}
               className="backdrop-blur-lg bg-white/10 rounded-2xl  text-2xl p-2  focus:outline-none focus:ring-3 focus:ring-cyan-500"
@@ -29,6 +33,7 @@ const SliderInputSec = ({ sendData, setMood ,setBackstory,setSliders,oncreate,sl
           <div className="flex flex-col">
             <h1>Backstory</h1>
             <textarea
+            required
             onChange={(e)=>setBackstory(e.target.value)}
               className="backdrop-blur-lg bg-white/10 rounded-2xl  text-sm h-50 p-2 focus:outline-none focus:ring-3 focus:ring-cyan-500 "
               placeholder="describe your companion's origin story"
@@ -40,7 +45,10 @@ const SliderInputSec = ({ sendData, setMood ,setBackstory,setSliders,oncreate,sl
         <Mood setMood={setMood} />
 
         <button
-        onClick={()=>window.history.back()}
+      
+              
+
+
           type="submit"
           aria-label="Violet hover button"
           class="

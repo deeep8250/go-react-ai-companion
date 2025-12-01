@@ -7,7 +7,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Health(c *gin.Context) {
+var UserAll []models.Ai
+
+func AddUser(c *gin.Context) {
+
 	var User models.Ai
 	err := c.ShouldBindJSON(&User)
 	if err != nil {
@@ -17,7 +20,15 @@ func Health(c *gin.Context) {
 		return
 	}
 
+	UserAll = append(UserAll, User)
+
 	c.JSON(http.StatusOK, gin.H{
-		"reponse": User,
+		"reponse": UserAll,
+	})
+}
+
+func GetUser(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"response": UserAll,
 	})
 }

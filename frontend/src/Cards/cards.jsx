@@ -2,11 +2,11 @@ import React from "react";
 import ProgressbarCard from "./ProgressbarCard";
 import Category from "./Category";
 
-const Cards = () => {
+const Cards = ({image}) => {
   return (
-    <div className="sm:h-190 w-130 bg-gray-800 rounded-2xl hover:scale-110 transition duration-300 overflow-hidden">
+    <div className="sm:h-170 w-full bg-gray-800 rounded-2xl hover:scale-110 transition duration-300 overflow-hidden m-10">
       <div className="w-full  h-[60%] relative">
-        <img src="https://img.freepik.com/premium-photo/half-robot-woman-from-future-isolated-white-background_639806-2732.jpg"/>
+        <img src={image} className="w-full h-full object-cover"/>
         <Category />
       </div>
 
@@ -30,7 +30,7 @@ const Cards = () => {
           <ProgressbarCard Percentage="80%" />
         </div>
         
-     <button className="w-[50%] backdrop-blur-lg bg-white/10 border-2 rounded-2xl p-2 hover:scale-110 transition ml-20 text-white">Chat Now</button>       
+     <button className="w-[50%] backdrop-blur-lg bg-white/10 border-2 rounded-2xl mb-100 hover:scale-110 transition ml-20 text-white">Chat Now</button>       
       </div>
     </div>
   );

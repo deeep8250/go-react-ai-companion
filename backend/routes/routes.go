@@ -7,6 +7,7 @@ import (
 )
 
 func Routes(c *gin.Engine) {
-	c.POST("/health", handlers.Health)
+	c.POST("/health", handlers.AddUser)
+	c.GET("/get", handlers.GetUser)
 
 }

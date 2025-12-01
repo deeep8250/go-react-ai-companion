@@ -28,6 +28,7 @@ type Ai struct {
 	UserId    uint          `gorm:"index" json:"userId"`
 	Name      string        `json:"name"`
 	Backstory string        `json:"backstory"`
+	Avatar    string        `json:"avatar"`
 	Mood      Moods         `json:"mood"`
 	Sliders   SlidersStruct `json:"sliders"`
 	CreatedAt time.Time     `json:"createdAt"`
